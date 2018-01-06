@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     u = User.create(name: params[:name], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation] )
     if u
       session[:user_id] = u.id
-      redirect_to "/songs"
+      redirect_to "/users"
     else
       flash[:errors] = ["there was a problem with your username or password"]
       session[:user_id] = nil

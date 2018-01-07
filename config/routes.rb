@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  get 'bright_ideas' => 'ideas#index'
+  get 'bright_ideas/:id' => 'ideas#show'
+  post 'bright_ideas' => 'ideas#create'
+  post 'bright_ideas/:id/like' => 'ideas#like'
+  post 'bright_ideas/:id/destroy' => 'ideas#destroy'
+
+
   post 'users' => 'users#new'
+  get 'users/:id' => 'users#show'
 
-  get 'users' => 'users#show'
-
-  get 'users/edit'
 
   get '' => 'sessions#new'
   get 'main' => 'sessions#new'

@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     if session[:user_id]
-      redirect_to '/users'
+      redirect_to '/bright_ideas/'
     end
   end
 
@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_email(params[:email])
     if @user && @user.try(:authenticate, params[:password])
         session[:user_id] = @user.id
-        redirect_to "/users"
-        # redirect_to "/users/" + @user.id.to_s + "/show"
+        redirect_to "/bright_ideas/"
     else
         flash[:errors] = ["invalid username password combination"]
         redirect_to "/main"

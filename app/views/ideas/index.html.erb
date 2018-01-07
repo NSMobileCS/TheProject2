@@ -1,0 +1,58 @@
+<form action='/bright_ideas/' method='post'>
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <textarea name='content' placeholder='Post something witty here... '>
+    </textarea>
+    <input type='submit' value='Idea!'>
+</form>
+<hr><hr>
+<table>
+    <% @ideas.each do |idea| %>
+        <tr>
+            <td>
+                <a href='/users/<%= idea.user.id.to_s %>/'>
+                    <%= idea.user.name %>
+                </a> says:
+            </td>
+            <td>
+                <%= idea.content %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class='empty'> </div>
+            </td>
+            <td>
+                <% if idea.user == current_user %>
+                    <form action="/bright_ideas/<%= idea.id.to_s %>/destroy" method='POST'>
+                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                        <input type='submit' value='Delete this idea'>
+                    </form>
+                <% else %>
+                    <form action="/bright_ideas/<%= idea.id.to_s %>/like" method='POST'>
+                        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                        <input type='submit' value='Like'>
+                    </form>
+                <% end %>
+            </td>
+            <td>
+                <a href="/bright_ideas/<%= idea.id.to_s %>/">
+                    <%= idea.likes.count.to_s %> People
+                </a> like this
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class='empty'> </div>
+            </td>
+            <td>
+                <div class='empty'> </div>
+            </td>
+            <td>
+                <div class='empty'> </div>
+            </td>
+        </tr>
+    <% end %>
+</table>
+

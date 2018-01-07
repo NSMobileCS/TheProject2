@@ -2,10 +2,12 @@
 
 one:
   name: MyString
+  alias: MyString
   email: MyString
   password_digest: <%= BCrypt::Password.create('secret') %>
 
 two:
   name: MyString
+  alias: MyString
   email: MyString
   password_digest: <%= BCrypt::Password.create('secret') %>

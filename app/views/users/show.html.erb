@@ -1,6 +1,18 @@
-<%= @users.each do |user|  %>
 <p>
-    <%= user.name %>
-    <%= user.email %>
+    Name: <%= @user.name %>
 </p>
-<% end %>
+<p>
+    Alias: <%= @user.alias %>
+</p>
+<p>
+    Email: <%= @user.email %>
+</p>
+
+<hr>
+
+<p>
+    Total # of posts: <%= @user.ideas.count.to_s %>
+</p>
+<p>
+    Total # of likes: <%= @user.likes.count.to_s %>
+</p>

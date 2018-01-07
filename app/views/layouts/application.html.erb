@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ruby Exam Project App</title>
+  <title>bright ideas...</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -13,18 +13,21 @@
   <% end %>
 <% end %>
 <% if current_user %>
-<h3>
-
   <form action="/main/logout" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
     <label>
-      logged in as <%=current_user.name%> (<%=current_user.email%>)
+       logged in as <%=current_user.name%> (<%=current_user.email%>)
+      <button>
+        <a href='/bright_ideas/'>
+          Bright Ideas
+        </a>
+      </button>
+
       <input type="submit" name='submit' value="Log Out">
     </label>
   </form>
-</h3>
-<hr><hr><hr>
 <% end %>
+<hr><hr>
 <%= yield %>
 </body>
 </html>

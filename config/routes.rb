@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'bright_ideas' => 'ideas#create'
   post 'bright_ideas/:id/like' => 'ideas#like'
   post 'bright_ideas/:id/destroy' => 'ideas#destroy'
-  post 'bright_ideas/:id/unlike/:like_id' => 'ideas#unlike'
+  post 'bright_ideas/unlike/:like_id' => 'ideas#unlike'
 
   post 'users' => 'users#new'
   get 'users/:id' => 'users#show'

@@ -31,6 +31,20 @@ class IdeasController < ApplicationController
     end
   end
 
+  def unlike
+    user = User.find(session[:user_id])
+    idea = Idea.find(params[:id])
+    if (user && idea)
+      like = Like.find(params[:likeid])
+      like.destroy
+      redirect_to '/bright_ideas/'
+    else
+      flash[:errors] = ['unlike error -- we do not like it either!']
+      redirect_to '/main/'
+    end
+  end
+
+
   def show
     user = User.find(session[:user_id])
     if user

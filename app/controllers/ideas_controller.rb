@@ -33,8 +33,9 @@ class IdeasController < ApplicationController
 
   def unlike
     user = User.find(session[:user_id])
-    if user
-      like = Like.find(params[:like_id])
+    idea = Idea.find(params[:id])
+    if (user && idea)
+      like = Like.where(user: user, idea: idea).take
       like.destroy
       redirect_to '/bright_ideas/'
     else

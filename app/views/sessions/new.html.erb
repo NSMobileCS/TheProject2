@@ -1,59 +1,66 @@
 <h2>
-    sign in (returning users)
+    Welcome!
 </h2>
-<form action="/sessions" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <p>
-        email
-        <input type="text" id="Email" name = "email">
-    </p>
-    <p>
-        password
-        <input type="password" id="Password" name = "password">
-    </p>
-    <input type="submit" name="Sign In" value="Sign In">
-</form>
+<table id="table1">
+        <td>
+            <fieldset class='inlineform'>
+                <legend>
+                    Register
+                </legend>
+                <form action="/users" method="POST">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
+                    <hr>
+                    <p>
+                        name
+                        <input type='text' id='Name' name='name'>
+                    </p>
+                    <hr>
+                    <p>
+                        alias
+                        <input type='text' id='alias' name='alias'>
+                    </p>
 
+                    <hr>
+                    <p>
+                        email
+                        <input type="text" id="Email" name = "email">
+                    </p>
 
+                    <hr>    <p>
+                        password
+                        <input type="password" id="Password" name = "password">
+                    </p>
 
-<hr><hr>
+                    <hr>
+                    <p>
+                    confirm password
+                        <input type="password" id="Password_confirm" name = "password_confirmation">
+                    </p>
+                    <hr>
+                    <input type="submit" name="register" value="Register">
+                    <hr>
+                </form>
+            </fieldset>
+        </td>
+        <td>
+            <fieldset class='inlineform'>
+                <legend>
+                    Log In
+                </legend>
 
-<h2>
-    sign up (new users)
-</h2>
-<hr>
-<form action="/users" method="POST">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-    <hr>
-    <p>
-        name
-        <input type='text' id='Name' name='name'>
-    </p>
-    <hr>
-    <p>
-        alias
-        <input type='text' id='alias' name='alias'>
-    </p>
-
-    <hr>
-    <p>
-        email
-        <input type="text" id="Email" name = "email">
-    </p>
-
-    <hr>    <p>
-        password
-        <input type="password" id="Password" name = "password">
-    </p>
-
-    <hr>
-    <p>
-     confirm password
-        <input type="password" id="Password_confirm" name = "password_confirmation">
-    </p>
-    <hr>
-    <input type="submit" name="register" value="Register">
-    <hr>
-</form>
+                <form action="/sessions" method="POST">
+                    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                    <p>
+                        email
+                        <input type="text" id="Email" name = "email">
+                    </p>
+                    <p>
+                        password
+                        <input type="password" id="Password" name = "password">
+                    </p>
+                    <input type="submit" name="Sign In" value="Log In">
+                </form>
+            </fieldset>
+        </td>
+</table>

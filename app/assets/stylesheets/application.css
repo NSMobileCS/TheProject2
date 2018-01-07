@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+ textarea {
+    width: 45%;
+    min-height: 40px;
+    display: inline-block;
+    border: 2px inset slategrey;
+    border-radius: 2px;
+    background: -moz-linear-gradient(top, rgba(234,239,181,1) 0%, rgba(225,233,160,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(234,239,181,1) 0%,rgba(225,233,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(234,239,181,1) 0%,rgba(225,233,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.inlineform {
+    border: 2px inset slategrey;
+    vertical-align: top;
+    margin: 5px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.empty {
+    height: 4px;
+    width: 100%;
+    background-color: rgba(31, 31, 36, .4);
+}
+
+.empty2 {
+    height: 4px;
+    width: 80%;
+    background-color: rgba(231, 231, 236, .2);
+}
+
